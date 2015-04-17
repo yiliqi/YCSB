@@ -13,6 +13,12 @@
   <description>
     This is the top level project that builds, packages the core and all the DB bindings for YCSB infrastructure.
   </description>
+  <repositories>
+      <repository>
+            <id>cloudera</id>
+                  <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+                      </repository>
+                        </repositories>
   <dependencies>
     <!-- voldemort -->
     <dependency>
@@ -29,6 +35,7 @@
       <groupId>com.google.collections</groupId>
       <artifactId>google-collections</artifactId>
       <version>1.0</version>
+      <!--version>0.9</version-->
     </dependency>
     <!--
     Nail down slf4j version to 1.6 so that it defaults to no-op logger.
@@ -44,12 +51,12 @@
   <!-- Properties Management -->
   <properties>
     <maven.assembly.version>2.2.1</maven.assembly.version>
-    <hbase.version>0.92.1</hbase.version>
+    <hbase.version>0.98.6-cdh5.2.0</hbase.version>
     <accumulo.version>1.6.0</accumulo.version>
     <cassandra.version>0.7.0</cassandra.version>
     <infinispan.version>7.1.0.CR1</infinispan.version>
     <openjpa.jdbc.version>2.1.1</openjpa.jdbc.version>
-    <mapkeeper.version>1.0</mapkeeper.version>
+    <!--mapkeeper.version>1.0</mapkeeper.version-->
     <mongodb.version>2.11.2</mongodb.version>
     <orientdb.version>1.0.1</orientdb.version>
     <redis.version>2.0.0</redis.version>
@@ -61,7 +68,7 @@
 
   <modules>
     <!--module>build-tools</module-->
-    <module>cassandra</module>
+    <!--module>cassandra</module-->
     <module>core</module>
     <module>hbase</module>
     <module>hypertable</module>
@@ -69,9 +76,10 @@
     <module>dynamodb</module>
     <module>elasticsearch</module>
     <!--<module>gemfire</module>-->
-    <module>infinispan</module>
+    <!--module>infinispan</module-->
     <module>jdbc</module>
-    <module>mapkeeper</module>
+    <!--module>mapkeeper</module-->
+    <!--commented out due to unexist artifact, issue 152-->
     <module>mongodb</module>
     <module>orientdb</module>
     <!--module>nosqldb</module-->
