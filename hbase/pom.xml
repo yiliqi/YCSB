@@ -65,6 +65,7 @@ LICENSE file.
       <version>2.5.0-cdh5.2.0</version>
     </dependency-->
     <dependency>
+      <groupId>org.apache.hbase</groupId>
       <artifactId>hbase-client</artifactId>
       <version>${hbase.version}</version>
     </dependency>

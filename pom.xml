@@ -30,11 +30,16 @@ LICENSE file.
     This is the top level project that builds, packages the core and all the DB bindings for YCSB infrastructure.
   </description>
   <repositories>
-      <repository>
-            <id>cloudera</id>
-                  <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
-                      </repository>
-                        </repositories>
+    <repository>
+    <id>cloudera</id>
+    <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+    </repository>
+  </repositories>
+  <scm>
+    <connection>scm:git:git://github.com/brianfrankcooper/YCSB.git</connection>
+    <tag>master</tag>
+    <url>https://github.com/brianfrankcooper/YCSB</url>
+  </scm>
   <dependencies>
     <!-- voldemort -->
     <dependency>
@@ -64,50 +69,12 @@ LICENSE file.
     </dependency>
   </dependencies>
  
-  <!-- Properties Management -->
-  <properties>
-    <maven.assembly.version>2.2.1</maven.assembly.version>
-    <hbase.version>0.98.6-cdh5.2.0</hbase.version>
-  <scm>
-    <connection>scm:git:git://github.com/brianfrankcooper/YCSB.git</connection>
-    <tag>master</tag>
-    <url>https://github.com/brianfrankcooper/YCSB</url>
-  </scm>
-  <dependencyManagement>
-    <dependencies>
-      <!-- voldemort -->
-      <dependency>
-        <groupId>checkstyle</groupId>
-        <artifactId>checkstyle</artifactId>
-        <version>5.0</version>
-      </dependency>
-      <dependency>
-        <groupId>org.jdom</groupId>
-        <artifactId>jdom</artifactId>
-        <version>1.1</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.collections</groupId>
-        <artifactId>google-collections</artifactId>
-        <version>1.0</version>
-      </dependency>
-      <!--
-      Nail down slf4j version to 1.6 so that it defaults to no-op logger.
-      http://www.slf4j.org/codes.html#StaticLoggerBinder
-      -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.6.4</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <!-- Properties Management -->
   <properties>
     <maven.assembly.version>2.5.5</maven.assembly.version>
     <maven.dependency.version>2.10</maven.dependency.version>
-    <hbase.version>1.0.0</hbase.version>
+    <hbase.version>1.0.0-cdh5.4.5</hbase.version>
     <accumulo.version>1.6.0</accumulo.version>
     <cassandra.version>1.2.9</cassandra.version>
     <cassandra.cql.version>1.0.3</cassandra.cql.version>
@@ -143,8 +110,8 @@ LICENSE file.
     <module>distribution</module>
     <module>dynamodb</module>
     <module>elasticsearch</module>
-    <!--<module>gemfire</module>-->
-    <!--module>infinispan</module-->
+    <module>gemfire</module>
+    <module>infinispan</module>
     <module>jdbc</module>
     <!--module>mapkeeper</module-->
     <!--commented out due to unexist artifact, issue 152-->
